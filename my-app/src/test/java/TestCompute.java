@@ -20,6 +20,18 @@ public class TestCompute {
     MessageQueue mq = mock(MessageQueue.class);
     when(mq.size()).thenReturn(0);
     c = new Compute(mq);
-    assertEquals(-1, -1);
+    int a=c.countNumberOfOccurrences(null);
+    assertEquals(a, -1);
+  }
+
+  @Test
+  public void stringDoesNotContain() {
+    MessageQueue mq = mock(MessageQueue.class);
+    String s="aaa";
+    when(mq.contains(s)).thenReturn(false);
+    when(mq.size()).thenReturn(1);
+    c = new Compute(mq);
+    int a=c.countNumberOfOccurrences(s);
+    assertEquals(a, 0);
   }
 }
