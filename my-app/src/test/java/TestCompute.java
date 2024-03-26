@@ -25,11 +25,34 @@ public class TestCompute {
   }
 
   @Test
-  public void stringDoesNotContain() {
+  public void stringDoesNotContainTest() {
     MessageQueue mq = mock(MessageQueue.class);
     String s="aaa";
     when(mq.contains(s)).thenReturn(false);
     when(mq.size()).thenReturn(1);
+    c = new Compute(mq);
+    int a=c.countNumberOfOccurrences(s);
+    assertEquals(a, 0);
+  }
+
+  @Test
+  public void valueTest() {
+    MessageQueue mq = mock(MessageQueue.class);
+    String s="aaa";
+    when(mq.contains(s)).thenReturn(true);
+    when(mq.size()).thenReturn(1);
+    when(mq.getAt(0)).thenReturn(s);
+    c = new Compute(mq);
+    int a=c.countNumberOfOccurrences(s);
+    assertEquals(a, 1);
+  }
+  @Test
+  public void valueTest2() {
+    MessageQueue mq = mock(MessageQueue.class);
+    String s="aaa";
+    when(mq.contains(s)).thenReturn(true);
+    when(mq.size()).thenReturn(1);
+    when(mq.getAt(0)).thenReturn("s");
     c = new Compute(mq);
     int a=c.countNumberOfOccurrences(s);
     assertEquals(a, 0);
