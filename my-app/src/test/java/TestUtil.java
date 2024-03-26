@@ -43,13 +43,14 @@ public class TestUtil {
 
     @Test
     public void testRunTimeException() {
-      int array []={0};  
+      int array []={0,0,0};  
       try {
         c.compute(array);
-      } catch (Exception e) {
+      } catch (RuntimeException e) {
         // TODO: handle exception
         assertTrue(true);
       }
+      assertFalse(false);
     }
 
 }
