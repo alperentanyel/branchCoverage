@@ -35,6 +35,12 @@ public class TestUtil {
       int array []={1,2,3};
         assertTrue(c.compute(array)); // Sum = 6, divisible by 1, 2, and 3
     }
+ 
+    @Test
+    public void testSumDivisibleByAnArgumentReturnsFalse() {
+      int array []={5,3,3};
+        assertFalse(c.compute(array)); // Sum = 6, divisible by 1, 2, and 3
+    }
     @Test
     public void testSumNotDivisibleByAnyArgumentReturnsFalse() {
       int array []={1,2,4};  
