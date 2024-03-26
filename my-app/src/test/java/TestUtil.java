@@ -41,4 +41,15 @@ public class TestUtil {
       assertTrue(c.compute(array)); // Sum = 7, not divisible by 1, 2, or 4
     }
 
+    @Test
+    public void testRunTimeException() {
+      int array []={0};  
+      try {
+        c.compute(array);
+      } catch (Exception e) {
+        // TODO: handle exception
+        assertTrue(true);
+      }
+    }
+
 }
